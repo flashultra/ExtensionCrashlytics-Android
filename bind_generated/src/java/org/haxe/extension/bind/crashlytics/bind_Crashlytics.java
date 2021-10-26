@@ -47,138 +47,139 @@ class bind_Crashlytics {
         }
     }
 
-    public static void recordException(final Crashlytics _instance, final Object Throwable) {
+    public static void recordException(final Crashlytics _instance, final Object throwable) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
                 public void run() {
-                    bind_Crashlytics.recordException(_instance, Throwable);
+                    bind_Crashlytics.recordException(_instance, throwable);
                 }
             });
         } else {
-            final @NonNull Throwable_java_ = (@NonNull) Throwable;
-            _instance.recordException(Throwable_java_);
+            final Throwable throwable_java_ = (Throwable) throwable;
+            _instance.recordException(throwable_java_);
         }
     }
 
-    public static void log(final Crashlytics _instance, final Object String) {
+    public static void log(final Crashlytics _instance, final String message) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
                 public void run() {
-                    bind_Crashlytics.log(_instance, String);
+                    bind_Crashlytics.log(_instance, message);
                 }
             });
         } else {
-            final @NonNull String_java_ = (@NonNull) String;
-            _instance.log(String_java_);
+            final String message_java_ = message;
+            _instance.log(message_java_);
         }
     }
 
-    public static void setUserId(final Crashlytics _instance, final Object String) {
+    public static void setUserId(final Crashlytics _instance, final String identifier) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
                 public void run() {
-                    bind_Crashlytics.setUserId(_instance, String);
+                    bind_Crashlytics.setUserId(_instance, identifier);
                 }
             });
         } else {
-            final @NonNull String_java_ = (@NonNull) String;
-            _instance.setUserId(String_java_);
+            final String identifier_java_ = identifier;
+            _instance.setUserId(identifier_java_);
         }
     }
 
-    public static void setCustomKey(final Crashlytics _instance, final Object String, final Object boolean) {
+    public static void setBool(final Crashlytics _instance, final String key, final int value) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
                 public void run() {
-                    bind_Crashlytics.setCustomKey(_instance, String, boolean);
+                    bind_Crashlytics.setBool(_instance, key, value);
                 }
             });
         } else {
-            final @NonNull String_java_ = (@NonNull) String;
-            final key, boolean_java_ = (key,) boolean;
-            _instance.setCustomKey(String_java_, boolean_java_);
+            final String key_java_ = key;
+            final boolean value_java_ = value != 0;
+            _instance.setBool(key_java_, value_java_);
         }
     }
 
-    public static void setCustomKey(final Crashlytics _instance, final Object String, final Object double) {
+    public static void setDouble(final Crashlytics _instance, final String key, final double value) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
                 public void run() {
-                    bind_Crashlytics.setCustomKey(_instance, String, double);
+                    bind_Crashlytics.setDouble(_instance, key, value);
                 }
             });
         } else {
-            final @NonNull String_java_ = (@NonNull) String;
-            final key, double_java_ = (key,) double;
-            _instance.setCustomKey(String_java_, double_java_);
+            final String key_java_ = key;
+            final double value_java_ = value;
+            _instance.setDouble(key_java_, value_java_);
         }
     }
 
-    public static void setCustomKey(final Crashlytics _instance, final Object String, final Object float) {
+    public static void setFloat(final Crashlytics _instance, final String key, final float value) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
                 public void run() {
-                    bind_Crashlytics.setCustomKey(_instance, String, float);
+                    bind_Crashlytics.setFloat(_instance, key, value);
                 }
             });
         } else {
-            final @NonNull String_java_ = (@NonNull) String;
-            final key, float_java_ = (key,) float;
-            _instance.setCustomKey(String_java_, float_java_);
+            final String key_java_ = key;
+            final float value_java_ = value;
+            _instance.setFloat(key_java_, value_java_);
         }
     }
 
-    public static void setCustomKey(final Crashlytics _instance, final Object String, final Object int) {
+    public static void setInt(final Crashlytics _instance, final String key, final int value) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
                 public void run() {
-                    bind_Crashlytics.setCustomKey(_instance, String, int);
+                    bind_Crashlytics.setInt(_instance, key, value);
                 }
             });
         } else {
-            final @NonNull String_java_ = (@NonNull) String;
-            final key, int_java_ = (key,) int;
-            _instance.setCustomKey(String_java_, int_java_);
+            final String key_java_ = key;
+            final int value_java_ = value;
+            _instance.setInt(key_java_, value_java_);
         }
     }
 
-    public static void setCustomKey(final Crashlytics _instance, final Object String, final Object long) {
+    public static void setLong(final Crashlytics _instance, final String key, final int value) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
                 public void run() {
-                    bind_Crashlytics.setCustomKey(_instance, String, long);
+                    bind_Crashlytics.setLong(_instance, key, value);
                 }
             });
         } else {
-            final @NonNull String_java_ = (@NonNull) String;
-            final key, long_java_ = (key,) long;
-            _instance.setCustomKey(String_java_, long_java_);
+            final String key_java_ = key;
+            final long value_java_ = value;
+            _instance.setLong(key_java_, value_java_);
         }
     }
 
-    public static void setCustomKey(final Crashlytics _instance, final Object String) {
+    public static void setString(final Crashlytics _instance, final String key, final String value) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
                 public void run() {
-                    bind_Crashlytics.setCustomKey(_instance, String);
+                    bind_Crashlytics.setString(_instance, key, value);
                 }
             });
         } else {
-            final @NonNull String_java_ = (@NonNull) String;
-            _instance.setCustomKey(String_java_);
+            final String key_java_ = key;
+            final String value_java_ = value;
+            _instance.setString(key_java_, value_java_);
         }
     }
 
-    public static void setCustomKeys(final Crashlytics _instance, final Object CustomKeysAndValues) {
+    public static void setCustomKeys(final Crashlytics _instance, final Object keysAndValues) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
                 public void run() {
-                    bind_Crashlytics.setCustomKeys(_instance, CustomKeysAndValues);
+                    bind_Crashlytics.setCustomKeys(_instance, keysAndValues);
                 }
             });
         } else {
-            final @NonNull CustomKeysAndValues_java_ = (@NonNull) CustomKeysAndValues;
-            _instance.setCustomKeys(CustomKeysAndValues_java_);
+            final CustomKeysAndValues keysAndValues_java_ = (CustomKeysAndValues) keysAndValues;
+            _instance.setCustomKeys(keysAndValues_java_);
         }
     }
 
@@ -282,19 +283,6 @@ class bind_Crashlytics {
         } else {
             final boolean enabled_java_ = enabled != 0;
             _instance.setCrashlyticsCollectionEnabled(enabled_java_);
-        }
-    }
-
-    public static void setCrashlyticsCollectionEnabled(final Crashlytics _instance, final Object Boolean) {
-        if (!bind.Support.isUIThread()) {
-            bind.Support.getUIThreadHandler().post(new Runnable() {
-                public void run() {
-                    bind_Crashlytics.setCrashlyticsCollectionEnabled(_instance, Boolean);
-                }
-            });
-        } else {
-            final @Nullable Boolean_java_ = (@Nullable) Boolean;
-            _instance.setCrashlyticsCollectionEnabled(Boolean_java_);
         }
     }
 

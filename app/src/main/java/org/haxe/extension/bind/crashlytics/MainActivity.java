@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
         mCrashlytics = new Crashlytics();
         mCrashlytics.log("onCreate");
-        mCrashlytics.setCustomKey("MeaningOfLife", 42);
-        mCrashlytics.setCustomKey("LastUIAction", "Test value");
+        mCrashlytics.setInt("MeaningOfLife", 42);
+        mCrashlytics.setString("LastUIAction", "Test value");
         mCrashlytics.setUserId("123456789");
         mCrashlytics.recordException(new Exception("Non-fatal exception: something went wrong!"));
     }

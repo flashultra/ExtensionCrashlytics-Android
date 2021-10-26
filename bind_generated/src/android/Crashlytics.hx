@@ -22,88 +22,89 @@ class Crashlytics {
     }
     private static var _mid_constructor:JMethodID = null;
 
-    public function recordException(Throwable:JObject):Void {
+    public function recordException(throwable:JObject):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
         if (_mid_recordException == null) _mid_recordException = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "recordException", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;)V");
-        var Throwable_jni_ = Throwable.pointer;
-        Crashlytics_Extern.recordException(_jclass, _mid_recordException, _instance.pointer, Throwable_jni_);
+        var throwable_jni_ = throwable.pointer;
+        Crashlytics_Extern.recordException(_jclass, _mid_recordException, _instance.pointer, throwable_jni_);
     }
     private static var _mid_recordException:JMethodID = null;
 
-    public function log(String:JObject):Void {
+    public function log(message:String):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
-        if (_mid_log == null) _mid_log = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "log", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;)V");
-        var String_jni_ = String.pointer;
-        Crashlytics_Extern.log(_jclass, _mid_log, _instance.pointer, String_jni_);
+        if (_mid_log == null) _mid_log = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "log", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/String;)V");
+        var message_jni_ = message;
+        Crashlytics_Extern.log(_jclass, _mid_log, _instance.pointer, message_jni_);
     }
     private static var _mid_log:JMethodID = null;
 
-    public function setUserId(String:JObject):Void {
+    public function setUserId(identifier:String):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
-        if (_mid_setUserId == null) _mid_setUserId = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setUserId", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;)V");
-        var String_jni_ = String.pointer;
-        Crashlytics_Extern.setUserId(_jclass, _mid_setUserId, _instance.pointer, String_jni_);
+        if (_mid_setUserId == null) _mid_setUserId = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setUserId", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/String;)V");
+        var identifier_jni_ = identifier;
+        Crashlytics_Extern.setUserId(_jclass, _mid_setUserId, _instance.pointer, identifier_jni_);
     }
     private static var _mid_setUserId:JMethodID = null;
 
-    public function setCustomKey(String:JObject, boolean:JObject):Void {
+    public function setBool(key:String, value:Bool):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
-        if (_mid_setCustomKey == null) _mid_setCustomKey = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setCustomKey", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;Ljava/lang/Object;)V");
-        var String_jni_ = String.pointer;
-        var boolean_jni_ = boolean.pointer;
-        Crashlytics_Extern.setCustomKey(_jclass, _mid_setCustomKey, _instance.pointer, String_jni_, boolean_jni_);
+        if (_mid_setBool == null) _mid_setBool = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setBool", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/String;I)V");
+        var key_jni_ = key;
+        var value_jni_ = value ? 1 : 0;
+        Crashlytics_Extern.setBool(_jclass, _mid_setBool, _instance.pointer, key_jni_, value_jni_);
     }
-    private static var _mid_setCustomKey:JMethodID = null;
+    private static var _mid_setBool:JMethodID = null;
 
-    public function setCustomKey(String:JObject, double:JObject):Void {
+    public function setDouble(key:String, value:Float):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
-        if (_mid_setCustomKey == null) _mid_setCustomKey = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setCustomKey", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;Ljava/lang/Object;)V");
-        var String_jni_ = String.pointer;
-        var double_jni_ = double.pointer;
-        Crashlytics_Extern.setCustomKey(_jclass, _mid_setCustomKey, _instance.pointer, String_jni_, double_jni_);
+        if (_mid_setDouble == null) _mid_setDouble = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setDouble", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/String;D)V");
+        var key_jni_ = key;
+        var value_jni_ = value;
+        Crashlytics_Extern.setDouble(_jclass, _mid_setDouble, _instance.pointer, key_jni_, value_jni_);
     }
-    private static var _mid_setCustomKey:JMethodID = null;
+    private static var _mid_setDouble:JMethodID = null;
 
-    public function setCustomKey(String:JObject, float:JObject):Void {
+    public function setFloat(key:String, value:Float):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
-        if (_mid_setCustomKey == null) _mid_setCustomKey = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setCustomKey", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;Ljava/lang/Object;)V");
-        var String_jni_ = String.pointer;
-        var float_jni_ = float.pointer;
-        Crashlytics_Extern.setCustomKey(_jclass, _mid_setCustomKey, _instance.pointer, String_jni_, float_jni_);
+        if (_mid_setFloat == null) _mid_setFloat = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setFloat", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/String;F)V");
+        var key_jni_ = key;
+        var value_jni_ = value;
+        Crashlytics_Extern.setFloat(_jclass, _mid_setFloat, _instance.pointer, key_jni_, value_jni_);
     }
-    private static var _mid_setCustomKey:JMethodID = null;
+    private static var _mid_setFloat:JMethodID = null;
 
-    public function setCustomKey(String:JObject, int:JObject):Void {
+    public function setInt(key:String, value:Int):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
-        if (_mid_setCustomKey == null) _mid_setCustomKey = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setCustomKey", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;Ljava/lang/Object;)V");
-        var String_jni_ = String.pointer;
-        var int_jni_ = int.pointer;
-        Crashlytics_Extern.setCustomKey(_jclass, _mid_setCustomKey, _instance.pointer, String_jni_, int_jni_);
+        if (_mid_setInt == null) _mid_setInt = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setInt", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/String;I)V");
+        var key_jni_ = key;
+        var value_jni_ = value;
+        Crashlytics_Extern.setInt(_jclass, _mid_setInt, _instance.pointer, key_jni_, value_jni_);
     }
-    private static var _mid_setCustomKey:JMethodID = null;
+    private static var _mid_setInt:JMethodID = null;
 
-    public function setCustomKey(String:JObject, long:JObject):Void {
+    public function setLong(key:String, value:Int):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
-        if (_mid_setCustomKey == null) _mid_setCustomKey = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setCustomKey", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;Ljava/lang/Object;)V");
-        var String_jni_ = String.pointer;
-        var long_jni_ = long.pointer;
-        Crashlytics_Extern.setCustomKey(_jclass, _mid_setCustomKey, _instance.pointer, String_jni_, long_jni_);
+        if (_mid_setLong == null) _mid_setLong = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setLong", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/String;I)V");
+        var key_jni_ = key;
+        var value_jni_ = value;
+        Crashlytics_Extern.setLong(_jclass, _mid_setLong, _instance.pointer, key_jni_, value_jni_);
     }
-    private static var _mid_setCustomKey:JMethodID = null;
+    private static var _mid_setLong:JMethodID = null;
 
-    public function setCustomKey(String:JObject):Void {
+    public function setString(key:String, value:String):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
-        if (_mid_setCustomKey == null) _mid_setCustomKey = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setCustomKey", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;)V");
-        var String_jni_ = String.pointer;
-        Crashlytics_Extern.setCustomKey(_jclass, _mid_setCustomKey, _instance.pointer, String_jni_);
+        if (_mid_setString == null) _mid_setString = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setString", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/String;Ljava/lang/String;)V");
+        var key_jni_ = key;
+        var value_jni_ = value;
+        Crashlytics_Extern.setString(_jclass, _mid_setString, _instance.pointer, key_jni_, value_jni_);
     }
-    private static var _mid_setCustomKey:JMethodID = null;
+    private static var _mid_setString:JMethodID = null;
 
-    public function setCustomKeys(CustomKeysAndValues:JObject):Void {
+    public function setCustomKeys(keysAndValues:JObject):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
         if (_mid_setCustomKeys == null) _mid_setCustomKeys = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setCustomKeys", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;)V");
-        var CustomKeysAndValues_jni_ = CustomKeysAndValues.pointer;
-        Crashlytics_Extern.setCustomKeys(_jclass, _mid_setCustomKeys, _instance.pointer, CustomKeysAndValues_jni_);
+        var keysAndValues_jni_ = keysAndValues.pointer;
+        Crashlytics_Extern.setCustomKeys(_jclass, _mid_setCustomKeys, _instance.pointer, keysAndValues_jni_);
     }
     private static var _mid_setCustomKeys:JMethodID = null;
 
@@ -147,14 +148,6 @@ class Crashlytics {
     }
     private static var _mid_setCrashlyticsCollectionEnabled:JMethodID = null;
 
-    public function setCrashlyticsCollectionEnabled(Boolean:JObject):Void {
-        if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
-        if (_mid_setCrashlyticsCollectionEnabled == null) _mid_setCrashlyticsCollectionEnabled = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "setCrashlyticsCollectionEnabled", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;)V");
-        var Boolean_jni_ = Boolean.pointer;
-        Crashlytics_Extern.setCrashlyticsCollectionEnabled(_jclass, _mid_setCrashlyticsCollectionEnabled, _instance.pointer, Boolean_jni_);
-    }
-    private static var _mid_setCrashlyticsCollectionEnabled:JMethodID = null;
-
 }
 
 @:keep
@@ -170,34 +163,34 @@ private extern class Crashlytics_Extern {
     static function constructor(class_:JClass, method_:JMethodID):Pointer<Void>;
 
     @:native('android::Crashlytics_recordException')
-    static function recordException(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, Throwable:Pointer<Void>):Void;
+    static function recordException(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, throwable:Pointer<Void>):Void;
 
     @:native('android::Crashlytics_log')
-    static function log(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, String:Pointer<Void>):Void;
+    static function log(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, message:String):Void;
 
     @:native('android::Crashlytics_setUserId')
-    static function setUserId(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, String:Pointer<Void>):Void;
+    static function setUserId(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, identifier:String):Void;
 
-    @:native('android::Crashlytics_setCustomKey')
-    static function setCustomKey(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, String:Pointer<Void>, boolean:Pointer<Void>):Void;
+    @:native('android::Crashlytics_setBool')
+    static function setBool(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, key:String, value:Int):Void;
 
-    @:native('android::Crashlytics_setCustomKey')
-    static function setCustomKey(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, String:Pointer<Void>, double:Pointer<Void>):Void;
+    @:native('android::Crashlytics_setDouble')
+    static function setDouble(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, key:String, value:Float):Void;
 
-    @:native('android::Crashlytics_setCustomKey')
-    static function setCustomKey(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, String:Pointer<Void>, float:Pointer<Void>):Void;
+    @:native('android::Crashlytics_setFloat')
+    static function setFloat(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, key:String, value:Float):Void;
 
-    @:native('android::Crashlytics_setCustomKey')
-    static function setCustomKey(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, String:Pointer<Void>, int:Pointer<Void>):Void;
+    @:native('android::Crashlytics_setInt')
+    static function setInt(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, key:String, value:Int):Void;
 
-    @:native('android::Crashlytics_setCustomKey')
-    static function setCustomKey(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, String:Pointer<Void>, long:Pointer<Void>):Void;
+    @:native('android::Crashlytics_setLong')
+    static function setLong(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, key:String, value:Int):Void;
 
-    @:native('android::Crashlytics_setCustomKey')
-    static function setCustomKey(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, String:Pointer<Void>):Void;
+    @:native('android::Crashlytics_setString')
+    static function setString(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, key:String, value:String):Void;
 
     @:native('android::Crashlytics_setCustomKeys')
-    static function setCustomKeys(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, CustomKeysAndValues:Pointer<Void>):Void;
+    static function setCustomKeys(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, keysAndValues:Pointer<Void>):Void;
 
     @:native('android::Crashlytics_checkForUnsentReports')
     static function checkForUnsentReports(class_:JClass, method_:JMethodID, instance_:Pointer<Void>):Pointer<Void>;
@@ -213,9 +206,6 @@ private extern class Crashlytics_Extern {
 
     @:native('android::Crashlytics_setCrashlyticsCollectionEnabled')
     static function setCrashlyticsCollectionEnabled(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, enabled:Int):Void;
-
-    @:native('android::Crashlytics_setCrashlyticsCollectionEnabled')
-    static function setCrashlyticsCollectionEnabled(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, Boolean:Pointer<Void>):Void;
 
 }
 

@@ -17,47 +17,47 @@ public class Crashlytics {
         mCrashlytics.log("create crashlytics instance" );
     }
 
-    public void recordException(@NonNull Throwable throwable) {
+    public void recordException( Throwable throwable) {
         mCrashlytics.recordException(throwable);
     }
 
-    public void log(@NonNull String message) {
+    public void log( String message) {
         mCrashlytics.log(message);
     }
 
-    public void setUserId(@NonNull String identifier) {
+    public void setUserId( String identifier) {
         mCrashlytics.setUserId(identifier);
     }
 
-    public void setCustomKey(@NonNull String key, boolean value) {
+    public void setBool( String key, boolean value) {
         mCrashlytics.setCustomKey(key, Boolean.toString(value));
     }
 
-    public void setCustomKey(@NonNull String key, double value) {
+    public void setDouble( String key, double value) {
         mCrashlytics.setCustomKey(key, Double.toString(value));
     }
 
-    public void setCustomKey(@NonNull String key, float value) {
+    public void setFloat( String key, float value) {
         mCrashlytics.setCustomKey(key, Float.toString(value));
     }
 
-    public void setCustomKey(@NonNull String key, int value) {
+    public void setInt( String key, int value) {
         mCrashlytics.setCustomKey(key, Integer.toString(value));
     }
 
-    public void setCustomKey(@NonNull String key, long value) {
+    public void setLong( String key, long value) {
         mCrashlytics.setCustomKey(key, Long.toString(value));
     }
 
-    public void setCustomKey(@NonNull String key, @NonNull String value) {
+    public void setString( String key,  String value) {
         mCrashlytics.setCustomKey(key, value);
     }
 
-    public void setCustomKeys(@NonNull CustomKeysAndValues keysAndValues) {
+    public void setCustomKeys( CustomKeysAndValues keysAndValues) {
         mCrashlytics.setCustomKeys(keysAndValues);
     }
 
-    @NonNull
+
     public Task<Boolean> checkForUnsentReports() {
         return mCrashlytics.checkForUnsentReports();
     }
@@ -75,10 +75,6 @@ public class Crashlytics {
     }
 
     public void setCrashlyticsCollectionEnabled(boolean enabled) {
-        mCrashlytics.setCrashlyticsCollectionEnabled(enabled);
-    }
-
-    public void setCrashlyticsCollectionEnabled(@Nullable Boolean enabled) {
         mCrashlytics.setCrashlyticsCollectionEnabled(enabled);
     }
 

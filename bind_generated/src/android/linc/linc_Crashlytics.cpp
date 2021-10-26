@@ -12,59 +12,60 @@ namespace android {
         return return_hxcpp_;
     }
 
-    void Crashlytics_recordException(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> Throwable) {
-        jobject Throwable_jni_ = (jobject) (hx::IsNotNull(Throwable) ? Throwable.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, Throwable_jni_);
+    void Crashlytics_recordException(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> throwable) {
+        jobject throwable_jni_ = (jobject) (hx::IsNotNull(throwable) ? throwable.ptr : NULL);
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, throwable_jni_);
     }
 
-    void Crashlytics_log(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> String) {
-        jobject String_jni_ = (jobject) (hx::IsNotNull(String) ? String.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, String_jni_);
+    void Crashlytics_log(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::String message) {
+        jstring message_jni_ = ::bind::jni::HxcppToJString(message);
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, message_jni_);
     }
 
-    void Crashlytics_setUserId(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> String) {
-        jobject String_jni_ = (jobject) (hx::IsNotNull(String) ? String.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, String_jni_);
+    void Crashlytics_setUserId(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::String identifier) {
+        jstring identifier_jni_ = ::bind::jni::HxcppToJString(identifier);
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, identifier_jni_);
     }
 
-    void Crashlytics_setCustomKey(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> String, ::cpp::Pointer<void> boolean) {
-        jobject String_jni_ = (jobject) (hx::IsNotNull(String) ? String.ptr : NULL);
-        jobject boolean_jni_ = (jobject) (hx::IsNotNull(boolean) ? boolean.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, String_jni_, boolean_jni_);
+    void Crashlytics_setBool(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::String key, int value) {
+        jstring key_jni_ = ::bind::jni::HxcppToJString(key);
+        jint value_jni_ = (jint) value;
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, key_jni_, value_jni_);
     }
 
-    void Crashlytics_setCustomKey(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> String, ::cpp::Pointer<void> double) {
-        jobject String_jni_ = (jobject) (hx::IsNotNull(String) ? String.ptr : NULL);
-        jobject double_jni_ = (jobject) (hx::IsNotNull(double) ? double.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, String_jni_, double_jni_);
+    void Crashlytics_setDouble(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::String key, double value) {
+        jstring key_jni_ = ::bind::jni::HxcppToJString(key);
+        jdouble value_jni_ = (jdouble) value;
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, key_jni_, value_jni_);
     }
 
-    void Crashlytics_setCustomKey(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> String, ::cpp::Pointer<void> float) {
-        jobject String_jni_ = (jobject) (hx::IsNotNull(String) ? String.ptr : NULL);
-        jobject float_jni_ = (jobject) (hx::IsNotNull(float) ? float.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, String_jni_, float_jni_);
+    void Crashlytics_setFloat(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::String key, double value) {
+        jstring key_jni_ = ::bind::jni::HxcppToJString(key);
+        jfloat value_jni_ = (jfloat) value;
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, key_jni_, value_jni_);
     }
 
-    void Crashlytics_setCustomKey(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> String, ::cpp::Pointer<void> int) {
-        jobject String_jni_ = (jobject) (hx::IsNotNull(String) ? String.ptr : NULL);
-        jobject int_jni_ = (jobject) (hx::IsNotNull(int) ? int.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, String_jni_, int_jni_);
+    void Crashlytics_setInt(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::String key, int value) {
+        jstring key_jni_ = ::bind::jni::HxcppToJString(key);
+        jint value_jni_ = (jint) value;
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, key_jni_, value_jni_);
     }
 
-    void Crashlytics_setCustomKey(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> String, ::cpp::Pointer<void> long) {
-        jobject String_jni_ = (jobject) (hx::IsNotNull(String) ? String.ptr : NULL);
-        jobject long_jni_ = (jobject) (hx::IsNotNull(long) ? long.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, String_jni_, long_jni_);
+    void Crashlytics_setLong(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::String key, int value) {
+        jstring key_jni_ = ::bind::jni::HxcppToJString(key);
+        jint value_jni_ = (jint) value;
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, key_jni_, value_jni_);
     }
 
-    void Crashlytics_setCustomKey(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> String) {
-        jobject String_jni_ = (jobject) (hx::IsNotNull(String) ? String.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, String_jni_);
+    void Crashlytics_setString(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::String key, ::String value) {
+        jstring key_jni_ = ::bind::jni::HxcppToJString(key);
+        jstring value_jni_ = ::bind::jni::HxcppToJString(value);
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, key_jni_, value_jni_);
     }
 
-    void Crashlytics_setCustomKeys(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> CustomKeysAndValues) {
-        jobject CustomKeysAndValues_jni_ = (jobject) (hx::IsNotNull(CustomKeysAndValues) ? CustomKeysAndValues.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, CustomKeysAndValues_jni_);
+    void Crashlytics_setCustomKeys(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> keysAndValues) {
+        jobject keysAndValues_jni_ = (jobject) (hx::IsNotNull(keysAndValues) ? keysAndValues.ptr : NULL);
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, keysAndValues_jni_);
     }
 
     ::cpp::Pointer<void> Crashlytics_checkForUnsentReports(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_) {
@@ -90,11 +91,6 @@ namespace android {
     void Crashlytics_setCrashlyticsCollectionEnabled(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, int enabled) {
         jint enabled_jni_ = (jint) enabled;
         ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, enabled_jni_);
-    }
-
-    void Crashlytics_setCrashlyticsCollectionEnabled(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> Boolean) {
-        jobject Boolean_jni_ = (jobject) (hx::IsNotNull(Boolean) ? Boolean.ptr : NULL);
-        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, Boolean_jni_);
     }
 
 }
