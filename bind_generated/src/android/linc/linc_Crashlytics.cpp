@@ -12,6 +12,12 @@ namespace android {
         return return_hxcpp_;
     }
 
+    ::cpp::Pointer<void> Crashlytics_sharedInterface(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_) {
+        jobject return_jni_ = ::bind::jni::GetJNIEnv()->CallStaticObjectMethod((jclass) class_.ptr, (jmethodID) method_.ptr);
+        ::cpp::Pointer<void> return_hxcpp_ = return_jni_ != NULL ? ::cpp::Pointer<void>(::bind::jni::GetJNIEnv()->NewGlobalRef(return_jni_)) : null();
+        return return_hxcpp_;
+    }
+
     void Crashlytics_recordException(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> throwable) {
         jobject throwable_jni_ = (jobject) (hx::IsNotNull(throwable) ? throwable.ptr : NULL);
         ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, throwable_jni_);
@@ -91,6 +97,11 @@ namespace android {
     void Crashlytics_setCrashlyticsCollectionEnabled(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, int enabled) {
         jint enabled_jni_ = (jint) enabled;
         ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, enabled_jni_);
+    }
+
+    void Crashlytics_simulateCrash(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, int catchCrash) {
+        jint catchCrash_jni_ = (jint) catchCrash;
+        ::bind::jni::GetJNIEnv()->CallStaticVoidMethod((jclass) class_.ptr, (jmethodID) method_.ptr, (jobject) instance_.ptr, catchCrash_jni_);
     }
 
 }

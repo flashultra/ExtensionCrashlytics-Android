@@ -5,6 +5,8 @@ namespace android {
 
     ::cpp::Pointer<void> Crashlytics_constructor(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_);
 
+    ::cpp::Pointer<void> Crashlytics_sharedInterface(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_);
+
     void Crashlytics_recordException(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::cpp::Pointer<void> throwable);
 
     void Crashlytics_log(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, ::String message);
@@ -34,6 +36,8 @@ namespace android {
     int Crashlytics_didCrashOnPreviousExecution(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_);
 
     void Crashlytics_setCrashlyticsCollectionEnabled(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, int enabled);
+
+    void Crashlytics_simulateCrash(::cpp::Pointer<void> class_, ::cpp::Pointer<void> method_, ::cpp::Pointer<void> instance_, int catchCrash);
 
 }
 

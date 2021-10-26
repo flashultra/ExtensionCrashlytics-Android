@@ -22,6 +22,16 @@ class Crashlytics {
     }
     private static var _mid_constructor:JMethodID = null;
 
+    public static function sharedInterface():Crashlytics {
+        if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
+        if (_mid_sharedInterface == null) _mid_sharedInterface = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "sharedInterface", "()Lorg/haxe/extension/bind/crashlytics/Crashlytics;");
+        var ret = new Crashlytics();
+        var _instance_pointer = Crashlytics_Extern.sharedInterface(_jclass, _mid_sharedInterface);
+        ret._instance = _instance_pointer != null ? new JObject(_instance_pointer) : null;
+        return ret._instance != null ? ret : null;
+    }
+    private static var _mid_sharedInterface:JMethodID = null;
+
     public function recordException(throwable:JObject):Void {
         if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
         if (_mid_recordException == null) _mid_recordException = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "recordException", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;Ljava/lang/Object;)V");
@@ -148,6 +158,14 @@ class Crashlytics {
     }
     private static var _mid_setCrashlyticsCollectionEnabled:JMethodID = null;
 
+    public function simulateCrash(catchCrash:Bool):Void {
+        if (_jclass == null) _jclass = Support.resolveJClass(_jclassSignature);
+        if (_mid_simulateCrash == null) _mid_simulateCrash = Support.resolveStaticJMethodID("org/haxe/extension/bind/crashlytics/bind_Crashlytics", "simulateCrash", "(Lorg/haxe/extension/bind/crashlytics/Crashlytics;I)V");
+        var catchCrash_jni_ = catchCrash ? 1 : 0;
+        Crashlytics_Extern.simulateCrash(_jclass, _mid_simulateCrash, _instance.pointer, catchCrash_jni_);
+    }
+    private static var _mid_simulateCrash:JMethodID = null;
+
 }
 
 @:keep
@@ -161,6 +179,9 @@ private extern class Crashlytics_Extern {
 
     @:native('android::Crashlytics_constructor')
     static function constructor(class_:JClass, method_:JMethodID):Pointer<Void>;
+
+    @:native('android::Crashlytics_sharedInterface')
+    static function sharedInterface(class_:JClass, method_:JMethodID):Pointer<Void>;
 
     @:native('android::Crashlytics_recordException')
     static function recordException(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, throwable:Pointer<Void>):Void;
@@ -206,6 +227,9 @@ private extern class Crashlytics_Extern {
 
     @:native('android::Crashlytics_setCrashlyticsCollectionEnabled')
     static function setCrashlyticsCollectionEnabled(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, enabled:Int):Void;
+
+    @:native('android::Crashlytics_simulateCrash')
+    static function simulateCrash(class_:JClass, method_:JMethodID, instance_:Pointer<Void>, catchCrash:Int):Void;
 
 }
 

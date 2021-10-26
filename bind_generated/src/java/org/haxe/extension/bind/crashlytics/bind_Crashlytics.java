@@ -47,6 +47,39 @@ class bind_Crashlytics {
         }
     }
 
+    public static Crashlytics sharedInterface() {
+        if (!bind.Support.isUIThread()) {
+            final BindResult _bind_result = new BindResult();
+            bind.Support.getUIThreadHandler().post(new Runnable() {
+                public void run() {
+                    synchronized(_bind_result) {
+                        try {
+                            _bind_result.value = bind_Crashlytics.sharedInterface();
+                        } catch (Throwable e) {
+                            e.printStackTrace();
+                        }
+                        _bind_result.resolved = true;
+                        _bind_result.notifyAll();
+                    }
+                }
+            });
+            synchronized(_bind_result) {
+                if (!_bind_result.resolved) {
+                    try {
+                        _bind_result.wait();
+                    } catch (Throwable e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return (Crashlytics) _bind_result.value;
+        } else {
+            final Crashlytics return_java_ = Crashlytics.sharedInterface();
+            final Crashlytics return_jni_ = (Crashlytics) return_java_;
+            return return_jni_;
+        }
+    }
+
     public static void recordException(final Crashlytics _instance, final Object throwable) {
         if (!bind.Support.isUIThread()) {
             bind.Support.getUIThreadHandler().post(new Runnable() {
@@ -283,6 +316,19 @@ class bind_Crashlytics {
         } else {
             final boolean enabled_java_ = enabled != 0;
             _instance.setCrashlyticsCollectionEnabled(enabled_java_);
+        }
+    }
+
+    public static void simulateCrash(final Crashlytics _instance, final int catchCrash) {
+        if (!bind.Support.isUIThread()) {
+            bind.Support.getUIThreadHandler().post(new Runnable() {
+                public void run() {
+                    bind_Crashlytics.simulateCrash(_instance, catchCrash);
+                }
+            });
+        } else {
+            final boolean catchCrash_java_ = catchCrash != 0;
+            _instance.simulateCrash(catchCrash_java_);
         }
     }
 

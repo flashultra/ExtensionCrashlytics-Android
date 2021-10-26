@@ -11,10 +11,20 @@ public class Crashlytics {
 
     private FirebaseCrashlytics mCrashlytics;
 
+    static Crashlytics sSharedInstance = null;
+
     public Crashlytics()
     {
         mCrashlytics = FirebaseCrashlytics.getInstance();
         mCrashlytics.log("create crashlytics instance" );
+    }
+
+    public static Crashlytics sharedInterface() {
+
+        if (sSharedInstance == null) sSharedInstance = new Crashlytics();
+
+        return sSharedInstance;
+
     }
 
     public void recordException( Throwable throwable) {
@@ -76,6 +86,21 @@ public class Crashlytics {
 
     public void setCrashlyticsCollectionEnabled(boolean enabled) {
         mCrashlytics.setCrashlyticsCollectionEnabled(enabled);
+    }
+
+    public void simulateCrash(boolean catchCrash) {
+        if (catchCrash) {
+            try {
+                throw new NullPointerException();
+            } catch (NullPointerException ex) {
+                // [START crashlytics_log_and_report]
+                mCrashlytics.log("NPE caught!");
+                mCrashlytics.recordException(ex);
+                // [END crashlytics_log_and_report]
+            }
+        } else {
+            throw new NullPointerException();
+        }
     }
 
 }
