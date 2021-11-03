@@ -27,15 +27,20 @@ public class MainActivity extends AppCompatActivity {
         CheckBox checkBox =  (CheckBox) findViewById(R.id.catchCrashCheckBox);
         if (checkBox.isChecked()) {
             try {
-                throw new NullPointerException();
-            } catch (NullPointerException ex) {
+                throw new haxe.Exception(haxe.lang.Runtime.toString("Test exception"),
+                        (haxe.Exception)null,
+                        null);
+            } catch (Exception ex) {
                 // [START crashlytics_log_and_report]
                 mCrashlytics.log("NPE caught!");
                 mCrashlytics.recordException(ex);
                 // [END crashlytics_log_and_report]
             }
         } else {
-            throw new NullPointerException();
+            //throw new NullPointerException();
+            throw new haxe.Exception(haxe.lang.Runtime.toString("Test exception"),
+                    (haxe.Exception)null,
+                    null);
         }
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="Main" package="org.haxe.extension.bind.crashlytics" version="1.0.0" company="CrashlyticsExt" />
+	
+	<!-- output -->
+	<app main="Main" file="Main" path="bin" />
+	
+	<window background="#000000" fps="60" />
+	<window width="800" height="480" unless="mobile" />
+	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
+	
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="openfl" />
+	<haxelib name="bind" />
+
+	<template path="templates" if ="android" />
+
+	<setenv name="ANDROID_GRADLE_TASK" value="app:assembleDebug app:uploadCrashlyticsSymbolFileDebug" />
+	<!-- <setenv name="ANDROID_GRADLE_TASK" value="app:assembleRelease app:uploadCrashlyticsSymbolFileRelease" /> -->
+
+	<android minimum-sdk-version="28" />
+	<android target-sdk-version="28" />
+	
+	<haxedef name="HXCPP_DEBUG_LINK" />
+	
+	<!-- assets -->
+	<assets path="assets/img" rename="img" />
+</project>
